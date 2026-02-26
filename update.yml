@@ -1,0 +1,8 @@
+---
+- name: Update packages on all servers
+  hosts: all
+  become: true
+  become_method: sudo
+  become_user: root
+  roles:
+    - update

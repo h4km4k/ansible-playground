@@ -1,8 +1,18 @@
 ---
-- name: Update all servers
+- name: Update packages on all servers
   hosts: all
   become: true
   become_method: sudo
   become_user: root
+  tags: update
   roles:
-    - update
+    - { role: update, tags: [update] }
+
+- name: Install docker on all servers
+  hosts: all
+  become: true
+  become_method: sudo
+  become_user: root
+  tags: docker
+  roles:
+    - { role: docker, tags: [docker] }

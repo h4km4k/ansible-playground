@@ -1,0 +1,4 @@
+---
+# Add user(s) who should be in the docker group
+docker_users:
+  - ansible

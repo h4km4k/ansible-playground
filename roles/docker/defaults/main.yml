@@ -1,0 +1,9 @@
+---
+# defaults for docker role
+
+# which version to install ("latest" means use package manager's default)
+docker_version: "latest"
+# list of extra users to add to docker group
+docker_users: []
+# optional: additional packages required for docker
+docker_extra_packages: []

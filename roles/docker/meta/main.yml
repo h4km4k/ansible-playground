@@ -1,0 +1,17 @@
+---
+"galaxy_info":
+  author: "ansible-playground"
+  description: "Installs and configures Docker engine on various distributions."
+  license: MIT
+  min_ansible_version: 2.9
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: Rocky
+      versions:
+        - all
+"dependencies": []

@@ -1,0 +1,12 @@
+---
+# OS-specific configuration for docker role
+
+docker_packages:
+  Debian:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+  RedHat:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
