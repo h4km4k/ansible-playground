@@ -1,16 +1,25 @@
 ---
-- name: Ensure required packages for repository
+- name: Ensure required packages for Debian/Ubuntu
   package:
-    name: "{{ item }}"
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg
+      - lsb-release
     state: present
-  loop:
-    - yum-utils
-    - apt-transport-https
-    - ca-certificates
-    - curl
-    - gnupg
-    - lsb-release
-  when: ansible_os_family in ["RedHat", "Debian"]
+  when: ansible_os_family == "Debian"
+
+- name: Ensure required packages for RedHat/Rocky
+  package:
+    name:
+      - yum-utils
+      - device-mapper-persistent-data
+      - lvm2
+      - curl
+      - gnupg
+    state: present
+  when: ansible_os_family == "RedHat"
 
 - name: Add Docker GPG key (Debian)
   ansible.builtin.apt_key:
